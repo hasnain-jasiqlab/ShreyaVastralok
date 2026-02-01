@@ -35,11 +35,14 @@ services:
         sync: false
 
   # Frontend Service
-  - type: static
+  - type: web
     name: shreya-vastralok-frontend
+    runtime: static
+    region: singapore
+    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    staticPublishPath: ./dist
     envVars:
       - key: VITE_API_URL
         sync: false
